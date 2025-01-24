@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-// report page
+// Report page
 Route::get('/report', function () {
     // Query to count Commercial and Residential properties
     $commercialCount = DB::table('properties')->where('type', 'Commercial')->count();
@@ -21,4 +21,3 @@ Route::get('/report', function () {
 });
 
 Route::resource('properties', PropertyController::class);
-
