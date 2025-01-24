@@ -1,0 +1,65 @@
+version: "3.8"
+services:
+  laravel_11_app:
+    container_name: laravel_11_app
+    restart: always
+    build:
+      dockerfile: ./docker/php84/Dockerfile
+    expose:
+      - 80
+      - 443
+#      - 9000
+    volumes:
+      - .:/usr/src/app
+      - ./public:/usr/src/app/public
+    networks:
+      - laravel_11_app_network
+    extra_hosts:
+# To allow this container to connect with localhost:
+      - "localhost:host-gateway"
+
+  laravel_11_nginx:
+    container_name: laravel_11_nginx
+    restart: always
+    build:
+      dockerfile: ./docker/nginx/Dockerfile
+    volumes:
+    - ./public:/usr/src/app/public
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+#     These are added so other people on the network can see the website
+#     If modifying, do `docker-compose up -d --build`
+#      - "192.168.1.125:80:80"
+#      - "192.168.1.125:443:443"
+    depends_on:
+      - laravel_11_app
+    environment:
+      NGINX_FPM_HOST: laravel_11_app
+      NGINX_ROOT: /usr/src/app/public
+    networks:
+      - laravel_11_app_network
+
+  laravel_11_mariadb_database:
+    container_name: laravel_11_mariadb_database
+    image: mariadb:10.6
+    restart: always
+    ports:
+      - "3308:3308"
+    environment:
+      MYSQL_DATABASE: auctionslive
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: auctionslive_user
+      MYSQL_PASSWORD: root
+      MYSQL_TCP_PORT: 3308
+    volumes:
+      - ./shared:/shared
+      - mariadb_volume:/var/lib/mysql
+
+
+networks:
+  laravel_11_app_network:
+    driver: bridge
+
+volumes:
+  mariadb_volume:
