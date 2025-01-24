@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
+use Illuminate\Support\Facades\DB;
+
+Route::resource('properties', PropertyController::class);
 
 // Home page
 Route::get('/', function () {
@@ -19,5 +22,3 @@ Route::get('/report', function () {
         'chartData' => [$commercialCount, $residentialCount]
     ]);
 });
-
-Route::resource('properties', PropertyController::class);

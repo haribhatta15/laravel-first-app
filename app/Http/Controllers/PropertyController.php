@@ -68,6 +68,7 @@ class PropertyController extends Controller
         $property->update($validated);
 
         return redirect()->route('properties.index')->with('success', 'Property updated successfully.');
+        
     }
 
     /**

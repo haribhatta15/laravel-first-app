@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Properties</h1>
-    <a href="{{ route('properties.create') }}" class="btn btn-primary">Create New Property</a>
+    <a href="{{ route('properties.create') }}" class="btn btn-primary" >Create New Property</a>
     <table border="1" cellpadding="10" style="margin-top: 20px; width: 100%; text-align: left;">
         <thead>
             <tr>
@@ -21,8 +21,8 @@
                     <td>{{ $property->address }}</td>
                     <td>{{ $property->type }}</td>
                     <td>
-                        <a href="{{ route('properties.show', $property) }}">View</a> |
-                        <a href="{{ route('properties.edit', $property) }}">Edit</a> |
+                        <a href="{{ route('properties.show', $property) }}"> <button>View</button></a>
+                        <a href="{{ route('properties.edit', $property) }}"><button>Edit</button></a>
                         <form action="{{ route('properties.destroy', $property) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
