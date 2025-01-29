@@ -15,4 +15,3 @@ class Property extends Model
         'type',
     ];
 }
-// jump here later

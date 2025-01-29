@@ -8,7 +8,7 @@
         @csrf
         <div>
             <label for="address">Address:</label>
-            <input type="text" name="address" id="address" required>
+            <input type="text" name="address" id="address" required max="255">
         </div>
         <div>
             <label for="type">Type:</label>
