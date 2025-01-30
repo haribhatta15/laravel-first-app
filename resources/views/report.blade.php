@@ -5,7 +5,9 @@
 @section('content')
     <h1>Properties Report</h1>
 
-    <canvas id="propertiesChart" width="200" height="200"></canvas>
+    <div class="w-1/2 max-auto"> 
+        <canvas id="propertiesChart"></canvas>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -20,11 +22,15 @@
                 labels: ['Commercial', 'Residential'],
                 datasets: [{
                     data: chartData,
-                    backgroundColor: ['#007bff', '#ffc107'],
+                    backgroundColor: ['orange', 'gray'],
                     borderColor: ['#004085', '#ff8800'],
                     borderWidth: 1
                 }]
             },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
         });
     </script>
 @endsection
