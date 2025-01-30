@@ -8,7 +8,6 @@
     <div class="w-1/2 max-auto"> 
         <canvas id="propertiesChart"></canvas>
     </div>
-    // adding manual size
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
