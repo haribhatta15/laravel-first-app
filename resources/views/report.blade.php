@@ -22,7 +22,7 @@
                 labels: ['Commercial', 'Residential'],
                 datasets: [{
                     data: chartData,
-                    backgroundColor: ['orange', 'gray'],
+                    backgroundColor: ['#00d4ff', '#ff9200'],
                     borderColor: ['#004085', '#ff8800'],
                     borderWidth: 1
                 }]
