@@ -32,5 +32,10 @@
                 maintainAspectRatio: false,
             }
         });
+
+    </script>
+
+
+
     </script>
 @endsection
