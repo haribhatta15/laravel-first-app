@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\DB;
 
-Route::resource('properties', PropertyController::class); // This generates all necessary routes for CRUD operations 
+Route::resource('properties', PropertyController::class);
+// This generates all necessary routes for CRUD operations 
 
 // Home page
 Route::get('/', function () {
@@ -13,6 +14,7 @@ Route::get('/', function () {
 
 // Report page
 Route::get('/report', function () {
+
     // Query to count Commercial and Residential properties
     $commercialCount = DB::table('properties')->where('type', 'Commercial')->count();
     $residentialCount = DB::table('properties')->where('type', 'Residential')->count();
