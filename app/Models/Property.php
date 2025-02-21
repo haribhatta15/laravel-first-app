@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Property extends Model
 {
     use HasFactory;
-    // use SoftDeletes;
-    // use if necessary
 
     protected $fillable = [
         'address',
