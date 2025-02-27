@@ -28,7 +28,7 @@
     </main>
 
     <footer class="bg-blue-600 text-white text-center p-4 mt-auto">
-        <p>&copy; 2025 Property App. All Rights Reserved.</p>
+        <p>&copy; Hari Bhatta 2025 Property App. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
