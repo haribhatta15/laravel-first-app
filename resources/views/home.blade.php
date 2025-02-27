@@ -19,7 +19,7 @@
     </nav>
     <main class="flex-grow flex items-center justify-center">
         <section class="text-center p-8 bg-blue-500 bg-opacity-80 rounded-lg">
-            <h2 class="text-4xl font-bold mb-4">Find Your Perfect Property</h2>
+            <h2 class="text-4xl font-bold mb-4">Find Your Property Here!</h2>
             <p class="text-lg">Browse our collection of Commercial and Residential properties.</p>
             <a href="/properties" class="mt-4 inline-block bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold" onmouseover="this.classList.add('shadow-xl')" onmouseout="this.classList.remove('shadow-2xl')">
                 View Properties
